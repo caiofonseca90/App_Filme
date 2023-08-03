@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import api from "../../services/api";
+import Loading from "../../components/Loading/Loading";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
+
 
 const Filme = () => {
   const { id } = useParams();
-
   const [movie, setMovie] = useState({});
-
   const [loading, setLoading] = useState(true); 
-
-  useEffect (()=>{
+ 
+  const percentMovie = (movie.vote_count / movie.popularity) * 100
+  
+  
+  useEffect(() => { 
     async function loadFilme(){
       await api.get(`/movie/${id}` ,{
         params:{
@@ -28,6 +32,7 @@ const Filme = () => {
     } 
 
     loadFilme();
+     
     
     // return () =>{
     //   console.log('COMPONENTE DESMONTADO')
@@ -37,9 +42,7 @@ const Filme = () => {
 
   if (loading) {
     return(
-      <div className="border bg-black text-white mt-28">
-        <h1 className="text-white">CARREGANDO DETALHE</h1>
-      </div>
+      <Loading />
     )
   }
 
@@ -47,20 +50,34 @@ const Filme = () => {
     
     <div className="custom-movie-page">
       {/* banner movie */}
-      <img className=""src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
-      <div className=" mx-1 flex flex-col gap-3 mt-3">
+      <img className="rounded-xl  "src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} />
+      
+      <div className=" mx-1 flex flex-col gap-3 mt-5 mx-2">
         {/* title movie */}
-        <span className=" text-[1.4rem] text-yellow-200">{movie.title}</span>
-        {/* qtd vote */}
-        <div className="flex justify-between mb-3">
-          <span className="  text-sm text-[1.2rem]  text-yellow-300">{Math.floor(movie.vote_count)}</span>     
-          <span className="  text-sm text-[1.2rem]  text-yellow-300">{Math.floor(movie.vote_average)}/10</span>    
+        <div className="flex flex-wrap justify-center text-center gap-2">
+          <span className="custom-movie-name">{movie.title}</span>
+          <span className="custom-movie-date"> ({movie.release_date.slice(0,4)}) </span>     
         </div>
-        <span className="  text-sm text-[1.2rem]  text-yellow-300">Data de estréia: {movie.release_date}</span>     
-        <div className="  text-sm text-[1.2rem]  text-yellow-300">Data de estréia: {movie.video}</div>     
+        
+        {/* qtd vote */}
+        <div className="flex flex-row justify-between mt-5 mx-3 ">
+          <div className="flex flex-col gap-3 pt-5">
+            <span>Popular:{movie.popularity}</span>  
+            <span>Votos:{movie.vote_count}</span>  
+            <span>Aprovação: {movie.vote_average.toFixed(1)}</span>  
+          </div>
+          <div className="relative  rounded-xl">
+            <ProgressBar percent ={percentMovie.toFixed(1)}/>
+          </div>
+          
+        </div>
         
         {/* sinopse */}
-        <span className="font-sans text-yellow-50">{movie.overview}</span>    
+        <div>
+          <h3 className="text-[1.2rem] font-extrabold mt-5 mb-5">Sinopse</h3>
+          <span className="custom-atributes-movie">{movie.overview}</span>    
+        </div>
+        
       </div>
       
       
@@ -70,3 +87,4 @@ const Filme = () => {
 }
 
 export default Filme;
+

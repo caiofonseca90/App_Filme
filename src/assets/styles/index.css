@@ -29,6 +29,7 @@ body{
 }
 
 
+
 @layer utilities{
   /* Header section */
   .custom-header{
@@ -80,7 +81,6 @@ body{
   }
   .custom-title-home{
     @apply text-neutral-200 font-bold sm:text-[1.5rem] mb-5 mx-[1rem]
-
   }
   
   .custom-link-picture{
@@ -99,28 +99,27 @@ body{
   .custom-data-movie{
     @apply text-neutral-300 text-start mt-2 text-[.7rem]
   }
-  
-  
-
-  
-  
   /* Error page */
 
   .custom-error-page{
     height: 100vh;
     @apply bg-neutral-700 flex justify-center flex-col text-center text-neutral-200 w-screen
   }
-  
-  /* Movie=-Section */
+
+  /* movie-list-section */
+  .custom-movie-name{
+  @apply text-sm text-[1.2rem] text-neutral-200 font-bold
+  }
+  .custom-movie-date{
+    @apply text-sm text-[1rem] text-neutral-300 font-extrabold
+  }
   .custom-movie-page{
-    /* box-movie */
-    @apply mt-20 flex flex-col text-white mx-1 bg-zinc-900 rounded-xl p-5
+    @apply mt-20 flex flex-col text-white mx-1 bg-zinc-900 rounded-xl
   }
 
   /* custom-name-sinpose */
   .custom-atributes-movie{
-    /* atribute-movie */
-    @apply mt-20 flex flex-col text-white mx-1 bg-zinc-900 rounded-xl p-5
+    @apply text-white
   }
   
 

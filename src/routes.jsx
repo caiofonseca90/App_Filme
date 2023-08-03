@@ -11,14 +11,12 @@ function RouteApp(){
     return(
         <BrowserRouter>
             <Header />
-            
                 <Routes>
                     <Route path="/Home" element = {<Home />}/>
                     <Route path="/filme/:id" element = {<Filme />}/>
 
                     <Route path="*" element = {<Erro />} />
                 </Routes>
-                
         </BrowserRouter>
     )
 }

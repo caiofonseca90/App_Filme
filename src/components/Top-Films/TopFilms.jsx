@@ -7,12 +7,11 @@ import Loading from "../../components/Loading/Loading";
 
 const TopFilms = () => {
     const [moviesCine, setMoviesCine] = useState([]);
-  
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadFilms() {
-        const response = await api.get("movie/popular", {
+        const response = await api.get("movie/now_playing", {
             params:{
             api_key:"735b806197882cc17916e308599461e7",
             language:"pt-BR",
@@ -20,7 +19,6 @@ const TopFilms = () => {
             }
         })
         setMoviesCine(response.data.results.slice(0,20));
-        
         }
 
         loadFilms();
