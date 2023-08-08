@@ -11,7 +11,7 @@ const Home = () => {
             <h1 className="text-[1.3rem] sm:text-[2rem] lg:text-[2.5rem] text-blue-100 ">Bem-Vindo</h1>
             <span className="text-[1.3rem] sm:text-[2rem] lg:text-[2.5rem] ">Series, Filmes e muito mais</span>
           </div>
-          <img className="custom-header-banner-img" src="/src/assets/img/bg-edit.png" alt="img-banner" />
+          <img className="custom-header-banner-img" src="https://drive.google.com/drive/u/0/folders/1060VTecO5LP-YbntB6r6MYiQpUX0vTaw" alt="img-banner" />
           <div className="custom-header-banner-container-input"> 
             <input className="custom-header-banner-input" type="text" placeholder="Busque seu filme aqui" />
           </div>

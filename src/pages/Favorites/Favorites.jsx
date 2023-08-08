@@ -1,7 +1,6 @@
 import { useState, useEffect  } from "react"
 import {Link} from "react-router-dom";
 import NotFound from "../../components/FilmeNotFound/NotFound";
-import Loading from "../../components/Loading/Loading";
 
 
 const Favorites = () => {
@@ -25,7 +24,7 @@ const Favorites = () => {
         <div className="text-white lg:mt-[8rem] mt-20 mx-5 lg:m-auto lg:max-w-[40vw] text-shadow">
 
             {movie.length === 0 && <NotFound />  || <h1 className="font-extrabold text-neutral-300 text-[1.4rem] lg:text-[2rem] shadow-sm ">Lista de Filmes Favoritos</h1>}
-            
+
             <ul className="mt-10 flex w-[80%] justify-around flex-col ">
                {movie.map((item) =>{
                 return(
