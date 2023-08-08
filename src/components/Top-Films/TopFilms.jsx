@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 
-import api from "../../services/api";
+import api from "../../services/Api";
 
 import Loading from "../../components/Loading/Loading";
 
@@ -26,11 +26,12 @@ const TopFilms = () => {
 
     }, [])
 
+
     useEffect(() => {
         // Simulando um tempo de carregamento
         setTimeout(() => {
           setLoading(false);
-        }, 3500);
+        }, 5500);
       }, []);
       
   return (

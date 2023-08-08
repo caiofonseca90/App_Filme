@@ -27,7 +27,39 @@ body{
 .input-shadow{
   box-shadow:  0 10px 10px 3px #110;
 }
+.text-shadow{
+  text-shadow: 1px 5px 10px #000;
+}
 
+.circle-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+
+/* shadow-filmes */
+.shadow-films{
+  box-shadow: 50vw 0 250px -15px rgb(0, 0, 0) inset;
+}
+
+/* animation films-loadin */
+@keyframes loading {
+  0% {
+    
+    color: rgb(254, 29, 29);
+  }
+  50%{
+    color: rgb(236, 163, 163);
+  }
+  100% {
+    color: rgb(237, 36, 36);
+  }
+}
+
+.animate-loading {
+  animation: loading 2s linear infinite alternate-reverse ;
+}
 
 
 @layer utilities{
@@ -71,8 +103,7 @@ body{
     @apply input-shadow lg:w-[50rem] lg:h-[4.5rem] 
     sm:w-[32rem] sm:h-[3rem] lg:h-[4rem] w-[20rem] h-[2.2rem] rounded-xl px-4 outline-none 
   }
-
-
+  
   /* Home Section */
 
   .custom-home{
@@ -99,30 +130,52 @@ body{
   .custom-data-movie{
     @apply text-neutral-300 text-start mt-2 text-[.7rem]
   }
-  /* Error page */
+  
+  /* filmes-atributes */
 
-  .custom-error-page{
-    height: 100vh;
-    @apply bg-neutral-700 flex justify-center flex-col text-center text-neutral-200 w-screen
+  .custom-filmes-div{
+    @apply  mt-20 relative overflow-hidden
   }
-
-  /* movie-list-section */
-  .custom-movie-name{
-  @apply text-sm text-[1.2rem] text-neutral-200 font-bold
-  }
-  .custom-movie-date{
-    @apply text-sm text-[1rem] text-neutral-300 font-extrabold
-  }
-  .custom-movie-page{
-    @apply mt-20 flex flex-col text-white mx-1 bg-zinc-900 rounded-xl
+  .custom-img-poster{
+    @apply opacity-[.8] w-screen sm:opacity-[.3] z-[-9] absolute bg-cover rounded-2xl 
   }
 
-  /* custom-name-sinpose */
-  .custom-atributes-movie{
-    @apply text-white
+  .custom-section-filmes{
+    @apply sm:py-[4rem] flex flex-col lg:flex-row justify-between lg:justify-center lg:gap-5 lg:items-center 
   }
   
+  .custom-img-filme{
+    @apply py-3 px-2  sm:mt-0 h-[13rem] w-[8rem] md:h-[23rem] md:w-[15rem] lg:h-[32rem] lg:w-[20rem] rounded-2xl shadow-md 
+  }
+  .custom-titles-films{
+    @apply text-[1.3rem] md:text-[2.3rem] text-white font-bold drop-shadow-lg
+  }
 
+  .custom-date-films{
+    @apply text-[1.1rem] md:text-[1.5rem] text-neutral-300 font-semibold drop-shadow-lg
+  }
+
+  .custom-average-films{
+    @apply font-semibold text-[1rem] md:text-[1rem] w-[6rem]
+  }
+  .custom-icon-add{
+    @apply  font-bold md:text-[1.5rem] p-3 hover:scale-x-110 duration-75 rounded-full bg-slate-700 hover:bg-slate-800 cursor-pointer
+  }
+
+  .custom-icon-trailler{
+    @apply font-bold text-[2.5rem] duration-75 rounded-full cursor-pointer hover:text-white
+  }
+
+  .custom-text-trailler{
+    @apply  w-[5rem] text-[1rem] font-semibold
+  }
+  .custom-sinopse-h3{
+    @apply  mb-5 font-extrabold text-[1.2rem] md:text-[1.6rem]
+  }
+  .custom-sinopse-span{
+    @apply  text-shadow text-[.9rem] lg:text-[1.1rem]
+  }
+  
 }
 
 

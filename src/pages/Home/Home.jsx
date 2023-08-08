@@ -1,12 +1,9 @@
-// import { useEffect, useState } from "react";
-
 import TopFilms from "../../components/Top-Films/TopFilms";
 
 // url da api = https://api.themoviedb.org/3/movie/now_playing?api_key=735b806197882cc17916e308599461e7
 
 const Home = () => {
   return (
-    
     <div>
       <div className="custom-home">
         <header className="custom-header-banner">
@@ -19,12 +16,9 @@ const Home = () => {
             <input className="custom-header-banner-input" type="text" placeholder="Busque seu filme aqui" />
           </div>
         </header>
-
       <TopFilms />
-      
       </div>
     </div>
-  
   )
 }
 
