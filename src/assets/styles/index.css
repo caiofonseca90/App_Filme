@@ -129,7 +129,7 @@ body{
   /* Home Section */
 
   .custom-home{
-    @apply  md:min-w-[50rem] md:max-w-[55vw] sm:mt-20 sm:m-auto mt-16
+    @apply  md:min-w-[50rem] md:max-w-[55vw] sm:mt-20 sm:m-auto mt-16 border
   }
 
   .custom-title-home{
