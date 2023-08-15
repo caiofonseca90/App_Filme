@@ -1,10 +1,8 @@
-
 import RouteApp from "./routes"
 
 function App() {
-
   return (
-    <div className="">
+    <div>
       <RouteApp />
     </div>
   )
