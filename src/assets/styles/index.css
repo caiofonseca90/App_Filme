@@ -40,13 +40,13 @@ body{
 
 /* shadow-filmes */
 .shadow-films{
-  box-shadow: 50vw 0 250px -15px rgb(0, 0, 0) inset;
+  box-shadow: 54vw 0 250px -25px rgb(0, 0, 0) inset;
 }
 
 .shadow-r-home{
-  box-shadow: -60px 0 200px -15px #ebebd3 inset;
-  
+  box-shadow: -60px 0 200px -5px #ebebd3 inset;
 }
+
 .shadow-btn-banner{
   box-shadow: 0 0  10px 1px #333 ;
 }
@@ -68,6 +68,12 @@ body{
   animation: loading 2s linear infinite alternate-reverse ;
 }
 
+#tooltip{
+  border-radius: 20px;
+  background-color: #000000;
+  box-shadow: 0 0 2px 1px #555;
+  z-index: 999;
+}
 
 @layer utilities{
   /* Header section */
@@ -129,7 +135,7 @@ body{
   /* Home Section */
 
   .custom-home{
-    @apply  md:min-w-[50rem] md:max-w-[55vw] sm:mt-20 sm:m-auto mt-16 border
+    @apply  md:min-w-[50rem] md:max-w-[55vw] sm:mt-20 sm:m-auto mt-16
   }
 
   .custom-title-home{
@@ -157,49 +163,52 @@ body{
   /* filmes-atributes */
 
   .custom-filmes-div{
-    @apply  mt-20 relative overflow-hidden
+    @apply mt-[4rem] sm:mt-0 relative overflow-hidden h-[100vh] 
   }
   .custom-img-poster{
-    @apply opacity-[.8] w-screen sm:opacity-[.3] z-[-9] absolute bg-cover rounded-2xl 
+    @apply opacity-[.8] sm:h-full sm:opacity-[.3] z-[-9] absolute rounded-2xl right-0
   }
 
   .custom-section-filmes{
-    @apply sm:py-[4rem] flex flex-col lg:flex-row justify-between lg:justify-center lg:gap-5 lg:items-center 
+    @apply sm:px-[2rem] flex flex-col lg:flex-row justify-between lg:justify-start lg:gap-10 lg:items-center 
   }
   
   .custom-img-filme{
-    @apply py-3 px-2  sm:mt-0 h-[13rem] w-[8rem] md:h-[23rem] md:w-[15rem] lg:h-[32rem] lg:w-[20rem] rounded-2xl shadow-md 
+    @apply py-3 px-2 sm:mt-0 h-[14rem] w-[9rem] md:h-[23rem] md:w-[15rem] lg:h-[35rem] lg:w-[24rem] 
+    rounded-3xl shadow-md 
   }
 
   .custom-titles-films{
-    @apply text-[1.3rem] md:text-[2.3rem] text-white font-bold drop-shadow-lg
+    @apply text-[1.3rem] md:text-[2.3rem] text-yellow-100 font-bold drop-shadow-lg font-sans sm:mb-3
   }
 
   .custom-date-films{
-    @apply text-[1.1rem] md:text-[1.5rem] text-neutral-300 font-semibold drop-shadow-lg
+    @apply text-[1.1rem] md:text-[1.4rem] text-yellow-200 font-semibold drop-shadow-lg font-mono 
   }
 
   .custom-average-films{
-    @apply font-semibold text-[1rem] md:text-[1rem] w-[6rem]
+    @apply font-semibold text-[1rem] md:text-[1rem] w-[6rem] font-mono
   }
   .custom-icon-add{
-    @apply  font-bold md:text-[1.5rem] p-3 hover:scale-x-110 duration-75 rounded-full bg-slate-700 hover:bg-slate-800 cursor-pointer
+    @apply font-bold md:text-[2rem] text-[1.5rem] p-2 sm:p-1 hover:scale-x-105 duration-75 rounded-full
+    bg-yellow-300 hover:bg-yellow-500 cursor-pointer text-slate-700
   }
 
   .custom-icon-trailler{
-    @apply font-bold text-[2.5rem] duration-75 rounded-full cursor-pointer hover:text-white
+    @apply font-bold text-[2.5rem] duration-75 rounded-full cursor-pointer text-yellow-200 hover:text-yellow-300
   }
 
   .custom-text-trailler{
-    @apply  w-[5rem] text-[1rem] font-semibold
+    @apply  w-[5rem] text-[1rem] font-semibold font-mono
+
   }
   
   .custom-sinopse-h3{
-    @apply  mb-5 font-extrabold text-[1.2rem] md:text-[1.6rem]
+    @apply  font-extrabold text-[1.2rem] md:text-[1.6rem] font-sans mb-3 text-yellow-100
   }
 
   .custom-sinopse-span{
-    @apply  text-shadow text-[.9rem] lg:text-[1.1rem]
+    @apply  text-shadow text-[.9rem] sm:text-[1.1rem] font-serif 
   }
   
 }
