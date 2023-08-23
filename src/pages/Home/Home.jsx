@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <div className="custom-home">
-        <header className="vanta flex flex-col justify-evenly p-3 sm:p-8 mb-5 overflow-hidden input-shadow h-[35vh] ">
+        <header className=" flex flex-col justify-evenly p-3 sm:p-8 mb-5 overflow-hidden input-shadow h-[35vh] ">
           <div className="">
             <h1 className="text-neutral-100 text-shadow text-[1.5rem] lg:text-[3rem] font-extrabold">Bem-Vindo(a)</h1>
             <span className="text-neutral-300 text-shadow text-[1.3rem] lg:text-[2rem] font-bold">Explore séries e filmes.</span>

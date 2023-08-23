@@ -10,7 +10,7 @@
 
 body{
   font-family: sans-serif;
-  background-color: #222;
+  background-color: #111;
 }
 /* chrome */
 ::-webkit-scrollbar{
@@ -67,7 +67,6 @@ body{
 .animate-loading {
   animation: loading 2s linear infinite alternate-reverse ;
 }
-
 #tooltip{
   border-radius: 20px;
   background-color: #000000;
@@ -139,7 +138,7 @@ body{
   }
 
   .custom-title-home{
-    @apply text-yellow-300 font-bold sm:text-[1.5rem] mb-5 mx-[1rem] text-shadow 
+    @apply text-yellow-300 font-bold sm:text-[1.3rem] mb-5 mx-[1rem] text-shadow 
   }
   
   .custom-link-picture{
@@ -153,12 +152,12 @@ body{
   }
 
   .custom-link-movies{
-    @apply text-start text-[.8rem] lg:text-[1rem] font-bold text-yellow-100 text-shadow
+    @apply text-start text-[.6rem] lg:text-[.9rem] font-bold text-yellow-600 text-shadow
     hover:text-yellow-400 duration-150 ease-in-out mt-5
   }
 
   .custom-data-movie{
-    @apply text-yellow-200 text-start mt-2 text-[.7rem] lg:text-[1rem] text-shadow opacity-70
+    @apply text-yellow-200 text-start mt-1 text-[.6rem] lg:text-[.8rem] text-shadow opacity-50
   }
   /* filmes-atributes */
 
@@ -204,13 +203,20 @@ body{
   }
   
   .custom-sinopse-h3{
-    @apply  font-extrabold text-[1.2rem] md:text-[1.6rem] font-sans mb-3 text-yellow-100
-  }
-
-  .custom-sinopse-span{
-    @apply  text-shadow text-[.9rem] sm:text-[1.1rem] font-serif 
+    @apply  font-extrabold text-[1.2rem] md:text-[2rem] font-sans  mb-3 text-yellow-100
   }
   
+  .custom-sinopse-span{
+    @apply  text-shadow text-[.9rem] sm:text-[1.4rem] font-sans font-light 
+  }
+  
+  /* modal */
+  .custom-modal{
+    @apply border bg-slate-800 fixed top-[2vh] left-[50vw] z-50
+  }
+  .custon-content-modal{
+    @apply  bg-slate-50 
+  }
 }
 
 

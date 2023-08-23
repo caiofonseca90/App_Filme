@@ -6,17 +6,17 @@ import api from "../../services/Api";
 import Loading from "../../components/Loading/Loading";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
-import Modal from "react-modal"
-Modal.setAppElement("#root");
-
 const Filme = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(true); 
+  
   const percentMovie = (movie.vote_average ) 
   
-  useEffect(() => { 
+  
+ 
+ useEffect(() => { 
     async function loadFilme(){
       await api.get(`/movie/${id} `  ,{
         params:{
@@ -36,16 +36,16 @@ const Filme = () => {
     loadFilme();
     
   }, [navigate, id])
+  
 
   function plusFilms(){
     const mineList = localStorage.getItem("@CineFLix");
-    const [openModal, setOpenModal] = useState(false);
     let filmsSave =  JSON.parse(mineList) || [];
 
     const hasFilms = filmsSave.some( (filmsSave) => filmsSave.id === movie.id )
     // se o filme ja estiver salvo, impede que seja salvo novamente
     if(hasFilms){
-      alert('Filme ja está na lista');
+      alert("Filme ja está na lista!")
       return;
     }
     // verifica se o item nao está na lista, e salva
@@ -86,6 +86,19 @@ const Filme = () => {
                   data-tooltip-content={"Adcionar filme a lista"}
                   className="custom-icon-add"><AiOutlinePlus />
                 </span>
+                                                
+                {/* <Modal
+                  isOpen={openModal}
+                  onAfterClose={closeModal}
+                  contentLabel="Exemplo modal"
+                  overlayClassName="custom-modal"
+                  className="custon-content-modal"
+                >
+                  <span className="font-semibold">Close</span>
+                  <h2 className="text-center">Filme adicionado com sucesso</h2>
+                </Modal> */}
+
+                
                 <a target="_blank" 
                   rel="noreferrer"
                   href={`http://youtube.com/results?search_query=${movie.title} Trailer`}
