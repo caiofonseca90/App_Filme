@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <div className="custom-home">
-        <header className=" flex flex-col justify-evenly p-3 sm:p-8 mb-5 overflow-hidden input-shadow h-[35vh] ">
+        <header className=" vanta flex flex-col justify-evenly p-3 sm:p-8 mb-5 overflow-hidden input-shadow h-[35vh] ">
           <div className="">
             <h1 className="text-neutral-100 text-shadow text-[1.5rem] lg:text-[3rem] font-extrabold">Bem-Vindo(a)</h1>
             <span className="text-neutral-300 text-shadow text-[1.3rem] lg:text-[2rem] font-bold">Explore séries e filmes.</span>
@@ -35,19 +35,7 @@ const Home = () => {
             <button className="custom-header-banner-btn-search"><CiSearch /></button>
           </div>
         </header>
-        {/* <header className="custom-header-banner">
-          <div className="custom-header-banner-text">
-            <h1 className="custom-header-banner-h1">Bem-Vindo</h1>
-            <span className="custom-header-banner-span">Explore séries e filmes.</span>
-          </div>
-          <img className="custom-header-banner-img" src={imgUrl} alt="img-banner" />
-          <div className="custom-header-banner-container-input"> 
-            <input className="custom-header-banner-input" type="text" placeholder="Busque seu filme aqui." />
-            <button className="custom-header-banner-btn-search"><CiSearch /></button>
-          </div>
-        </header> */}
         <TopFilms className = "z-10" />
-        
       </div>
     </div>
   )

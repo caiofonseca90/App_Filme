@@ -17,9 +17,7 @@ const TopFilms = () => {
             }
       })
       setMoviesCine(response.data.results.slice(0,20));
-      setMoviesCine(response.data.results);
       }
-
       loadFilms();
       setLoading(false);
 
@@ -33,9 +31,13 @@ const TopFilms = () => {
       }, []);
 
   return (
-    <div className="rounded-2xl lg:shadow-r-home ">
-    <Link className="custom-title-home" to={`/Allmovies/`}>Top Filmes nos Cinemas</Link>
+    <div className="rounded-2xl lg:shadow-r-home flex flex-col ">
+      <ul>
+        <li className="mb-8"><Link className="custom-title-all-movies" to={`/Allmovies/`}>Veja mais Filmes</Link></li>
+      </ul>
+    
     <div className="overflow-y-hidden mt-1">
+    <span className="custom-title-home" >Top Filmes nos Cinemas</span>
       {loading ? (
         <Loading />
       ) : (
